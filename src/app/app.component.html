@@ -7,7 +7,7 @@
            required
            [matAutocomplete]="autoGroup"
            >
-      <mat-autocomplete #autoGroup="matAutocomplete" [displayWith]="stateDisplayFn">
+      <mat-autocomplete autoActiveFirstOption="true" autoSelectActiveOption="true" #autoGroup="matAutocomplete" [displayWith]="stateDisplayFn">
         @for (group of stateGroupOptions | async; track group) {
           <mat-optgroup [label]="group.letter">
             @for (state of group.states; track state) {

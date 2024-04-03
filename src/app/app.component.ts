@@ -21,7 +21,7 @@ export interface StateGroup {
 
 export const _filter = (opt: State[], value: string): State[] => {
     const filterValue = value.toLowerCase();
-
+    
     return opt.filter(item => item.name.toLowerCase().includes(filterValue));
 };
 
@@ -41,8 +41,9 @@ export const _filter = (opt: State[], value: string): State[] => {
 })
 
 export class AppComponent implements OnInit {
+    defaultState = 'Illinois';
     stateForm = this._formBuilder.group({
-        stateGroupControl: '',
+        stateGroupControl: this.defaultState,
     });
 
 
